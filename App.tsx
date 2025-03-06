@@ -6,8 +6,7 @@
  */
 import React, {useEffect} from 'react';
 import {
-  View,
-  Text
+  View
 } from 'react-native';
 import Orientation from 'react-native-orientation-locker';
 import Index from "./pages/Index";
@@ -24,12 +23,9 @@ function App(){
     };
   }, []);
     return (
-      
-          <View style={{flex: 1}}>
+          <View style={{flex: 1,padding:20}}>
             <Index></Index>
         </View>
-      
-      
     );
   
 }
