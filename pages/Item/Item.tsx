@@ -1,4 +1,8 @@
 import {View, Text, Button, StyleSheet} from 'react-native';
+<<<<<<< HEAD
+=======
+import BouncyCheckbox from 'react-native-bouncy-checkbox';
+>>>>>>> c840f68d666e2e00d4ffbcf5d6d64fbca92d028e
 import {CheckBox} from '@rneui/themed';
 
 type Todo = {
@@ -14,7 +18,11 @@ export default function Item({
 }: {
   todo: Todo;
   toggleTodo: (id: number) => void;
+<<<<<<< HEAD
   deleteTodo: (id: number) => void;
+=======
+    deleteTodo: (id: number) => void;
+>>>>>>> c840f68d666e2e00d4ffbcf5d6d64fbca92d028e
 }) {
 
   const checkedView = (
