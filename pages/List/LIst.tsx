@@ -1,4 +1,4 @@
-import {View, StyleSheet, ScrollView,Text} from 'react-native';
+import {StyleSheet, ScrollView,Text} from 'react-native';
 import React from 'react';
 import TodoItem from '../Item/Item';
 
@@ -14,7 +14,7 @@ export default function List({
   deleteTodo,
 }: {
   todos: Todo[];
-  toggleTodo: (id: number) => void;
+  toggleTodo: (t:Todo) => void;
   deleteTodo: (id: number) => void;
 }) {
    
