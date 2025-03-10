@@ -1,9 +1,9 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import {View,  StyleSheet} from 'react-native';
 import Header from './Header/Header';
 import TodoList from './List/LIst';
 import Footer from './Footer/Footer';
-import {useState} from 'react';
+import Store from '../utils/store';
 
 type Todo = {
   id: number;
@@ -13,11 +13,7 @@ type Todo = {
 
 export default function Index() {
   // 保存todo列表
-  const [todos, setTodos] = useState<Todo[]>([
-    {id: 1, content: 'todo1', checked: false},
-    {id: 2, content: 'todo2', checked: true},
-    {id: 3, content: 'todo3', checked: false},
-  ]);
+  const [todos, setTodos] = useState<Todo[]>([]);
   //!基于状态计算得变量不能定义为props
   const completedCount = todos.filter(todo => todo.checked).length;
   // 添加todo
@@ -58,6 +54,32 @@ export default function Index() {
     deleteAllChecked,
     todoCount: todos.length,
   };
+
+  useEffect(() => {
+    // 从Store中获取初始化的todos数据
+    const fetchInitialTodos = async () => {
+      const initialTodos = await Store.getTodos('todos');
+      if (initialTodos.length > 0) {
+        setTodos(initialTodos);
+      }else{
+        setTodos([
+          {id: 1, content: 'todo1', checked: false},
+          {id: 2, content: 'todo2', checked: true},
+          {id: 3, content: 'todo3', checked: false},
+        ]);
+      }
+    };
+  
+    // 调用异步函数
+    fetchInitialTodos();
+  }, []);
+
+
+  useEffect(() => {
+  
+    Store.setTodos('todos',todos);
+  
+  }, [todos]);
 
   return (
     <View style={styles.app}>
