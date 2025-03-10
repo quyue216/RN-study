@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
     height: 40,
     borderColor: '#ccc',
     borderWidth: 2,
+    marginBottom:10
   },
   headerInput: {
     width: '100%',

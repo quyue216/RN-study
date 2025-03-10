@@ -31,16 +31,12 @@ export default function Index() {
     setTodos(nextTodos);
   };
   // 切换todo状态
-  const toggleTodo = (id: number) => {
-    const nextTodos = todos.slice();
-
-    const todo = nextTodos.find(todo => todo.id === id);
-
-    if (todo) {
+  const toggleTodo = (todo:Todo) => {
       todo.checked = !todo.checked;
-    }
-
-    setTodos(nextTodos);
+      
+      const nextTodos = todos.slice();
+     
+     setTodos(nextTodos);
   };
 
   //全选
@@ -87,8 +83,9 @@ const styles = StyleSheet.create({
   },
   todosContainer: {
     borderWidth: 1,
-    borderColor: '#ccc',
+    width: '100%',
     borderRadius: 5,
     padding: 10,
+    borderColor: '#ccc',
   },
 });

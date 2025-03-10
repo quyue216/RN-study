@@ -23,11 +23,13 @@ function App(){
     };
   }, []);
     return (
-          <View style={{flex: 1,padding:20}}>
+          <View style={{flex: 1}}>
             <Index></Index>
         </View>
     );
   
 }
+
+// console.log(WebSocket);
 
 export default App;

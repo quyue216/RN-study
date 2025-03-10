@@ -13,7 +13,7 @@ export default function Item({
   deleteTodo
 }: {
   todo: Todo;
-  toggleTodo: (id: number) => void;
+  toggleTodo: (t:Todo) => void;
   deleteTodo: (id: number) => void;
 }) {
 
@@ -30,7 +30,7 @@ export default function Item({
         <CheckBox
           checked={todo.checked}
           onPress={() => {
-            toggleTodo(todo.id);
+            toggleTodo(todo);
           }}
           iconType="material-community"
           checkedIcon="checkbox-marked"

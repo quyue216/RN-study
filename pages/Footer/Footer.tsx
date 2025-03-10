@@ -25,8 +25,9 @@ export default function Footer({
         onPress={() => deleteAllChecked()}
         containerStyle={{
           width: 140,
+          flexShrink:1
         }}>
-        清除已完成任务
+        clear All task
       </Button>
     ) : null;
 
@@ -65,3 +66,6 @@ const footer = StyleSheet.create({
     alignItems: 'center',
   },
 });
+/* 
+padding:为什么没有生效？
+*/
