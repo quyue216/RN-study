@@ -30,6 +30,5 @@ function App(){
   
 }
 
-// console.log(WebSocket);
 
 export default App;

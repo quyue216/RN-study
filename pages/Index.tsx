@@ -1,7 +1,7 @@
 import React from 'react';
 import {View,  StyleSheet} from 'react-native';
 import Header from './Header/Header';
-import TodoList from './List/List';
+import TodoList from './List/LIst';
 import Footer from './Footer/Footer';
 import {useState} from 'react';
 
