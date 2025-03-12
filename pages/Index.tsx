@@ -28,18 +28,20 @@ export default function Index() {
   };
   // 切换todo状态
   const toggleTodo = (todo:Todo) => {
-      todo.checked = !todo.checked;
-      
-      const nextTodos = todos.slice();
-     
+    const nextTodos = todos.map(t => 
+      t.id === todo.id ? { ...t, checked: !t.checked } : t
+    );
      setTodos(nextTodos);
   };
 
   //全选
   const toggleAll = (result: true | false) => {
     const nextTodos = todos.map(todo => {
-      todo.checked = result;
-      return todo;
+      // todo.checked = result;
+      return {
+        ...todo,
+        checked:result
+      };
     });
     setTodos(nextTodos);
   };
