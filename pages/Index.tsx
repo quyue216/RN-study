@@ -58,7 +58,7 @@ export default function Index() {
   };
 
   useEffect(() => {
-    // 从Store中获取初始化的todos数据
+    // 从Store中获取初始化的todos数据,内部不能包含async函数。
     const fetchInitialTodos = async () => {
       const initialTodos = await Store.getTodos('todos');
       if (initialTodos.length > 0) {

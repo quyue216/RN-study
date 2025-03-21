@@ -9,12 +9,12 @@ import {
   View
 } from 'react-native';
 import Orientation from 'react-native-orientation-locker';
-import Index from "./pages/Index";
+import Index from "./pages/navgation/Index";
 
 function App(){
   const [showTodos,setShowTodos] = useState(false)
 
-  useEffect(() => {
+  /* useEffect(() => {
     // 锁定屏幕为横向
     Orientation.lockToLandscape();
     setTimeout(() => {
@@ -25,13 +25,15 @@ function App(){
       Orientation.unlockAllOrientations();
     };
     
-  }, []);
+  }, []); */
 
 
     return (
           <View style={{flex: 1}}>
-           {showTodos && <Index />}
-        </View>
+             
+           {/* {showTodos && <Index />} */}
+           <Index></Index>
+          </View>
     );
   
 }
