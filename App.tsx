@@ -5,15 +5,15 @@
  * @format
  */
 import React, {useEffect, useState} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text,Dimensions } from 'react-native';
 import SystemNavigationBar from 'react-native-system-navigation-bar';
 import Orientation from 'react-native-orientation-locker';
 import Index from './src/Index';
 
-// console.log(SystemNavigationBar,"------");
-
+// 隐藏系统的导航栏
+SystemNavigationBar.stickyImmersive();
 function App() {
-  const [showTodos, setShowTodos] = useState(true);
+  const [showTodos, setShowTodos] = useState(false);
 
   useEffect(() => {
     // 锁定屏幕为横向
@@ -21,10 +21,7 @@ function App() {
    
     setTimeout(() => {
       setShowTodos(true);
-    }, 1000);
-   
-    console.log('SystemNavigationBar',SystemNavigationBar);
-    
+    }, 1000);    
 
     // 在组件卸载时解锁屏幕方向
     return () => {
@@ -32,7 +29,7 @@ function App() {
     };
   }, []);
 
-  return <View style={{flex: 1}}>{showTodos && <Index />}</View>;
+  return <View  style={{flex: 1,height:'100%'}}>{showTodos && <Index />}</View>;
 }
 
 export default App;
