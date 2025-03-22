@@ -9,3 +9,7 @@ export const fitScreen = (value: number):number => {
     //  终端始终是以长度大的一遍作为宽度进行适配
     return value * (Math.max(height,width) / 750);
 }
+
+
+// 获取屏幕的高度
+export const screenHeight =()=> Dimensions.get('screen').height;

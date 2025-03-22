@@ -21,8 +21,6 @@ export default function useCurrentTime() {
             // 获取当前时间对象
             const timeText = getCurTFormat();
 
-            console.log("当前时间：", timeText, Date.now());
-
             // 更新文本对象
             setCurrentTime(timeText);
         }, 1000);
