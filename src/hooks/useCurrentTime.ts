@@ -1,17 +1,7 @@
 import { useEffect, useState } from "react";
-
+import { getCurTFormat } from "../utils/tools";
 // 获取当前时间hooks
 export default function useCurrentTime() {
-    // 获取当前时间格式化字符串
-    const getCurTFormat = () => {
-        const now = new Date();
-        const year = now.getFullYear();
-        const month = String(now.getMonth() + 1).padStart(2, '0');
-        const day = String(now.getDate()).padStart(2, '0');
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        return `${year}/${month}/${day} ${hours}:${minutes}`;
-    };
 
     const [time, setCurrentTime] = useState(getCurTFormat());
 

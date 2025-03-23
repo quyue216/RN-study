@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, ImageBackground, Image} from 'react-native';
-import {fitScreen} from '../../utils/fitScreen';
+import {fitScreen ,screenHeight} from '../../utils/fitScreen';
 import useCurrentTime from '../../hooks/useCurrentTime';
 import globalStyles from '../../assets/styles/globalStyles';
 
@@ -70,8 +70,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 0,
     top: 0,
-    width: fitScreen(100),
-    height:'100%'
+    width: fitScreen(100), 
+    height:screenHeight()-fitScreen(16), //减去底部的高度
     // height: fitScreen(453),
   },
   bg: {
