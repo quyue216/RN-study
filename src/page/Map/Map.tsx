@@ -16,6 +16,7 @@ export default function Map() {
       <MapView
         onLoad={() => console.log('onLoad')}
         compassEnabled={false}
+        // scrollEnabled={false}
         zoomControlsEnabled={false}
         scaleControlsEnabled={false}
         myLocationButtonEnabled={false}

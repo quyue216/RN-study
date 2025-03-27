@@ -7,6 +7,7 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text,Dimensions } from 'react-native';
 import SystemNavigationBar from 'react-native-system-navigation-bar';
+import "./src/gesture-handler.native"
 import Orientation from 'react-native-orientation-locker';
 import Index from './src/Index';
 

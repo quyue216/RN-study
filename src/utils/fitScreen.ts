@@ -12,4 +12,12 @@ export const fitScreen = (value: number):number => {
 
 
 // 获取屏幕的高度
-export const screenHeight =()=> Dimensions.get('screen').height;
+export const screenHeight =()=>{
+    const { height,width } = Dimensions.get('screen'); //screen包含屏幕底部导航栏
+    return Math.min(height,width);
+};
+// 获取屏幕的宽度
+export const screenWidth:()=>number =()=>{
+    const { height,width } = Dimensions.get('screen'); //screen包含屏幕底部导航栏
+    return Math.max(height,width);
+};
